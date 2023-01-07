@@ -12,6 +12,19 @@ const decrypt = function (data) {
   return decrypted.toString(CryptoJS.enc.Utf8)
 }
 
+//转换时间戳
+function timestampToTime(timestamp) {
+  if(timestamp.length == 13) var date = new Date(timestamp);
+  else var date = new Date(timestamp * 1000);
+  var Y = date.getFullYear() + '-';
+  var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1):date.getMonth()+1) + '-';
+  var D = (date.getDate()< 10 ? '0'+date.getDate():date.getDate())+ ' ';
+  var h = (date.getHours() < 10 ? '0'+date.getHours():date.getHours())+ ':';
+  var m = (date.getMinutes() < 10 ? '0'+date.getMinutes():date.getMinutes()) + ':';
+  var s = date.getSeconds() < 10 ? '0'+date.getSeconds():date.getSeconds();
+  return Y+M+D+h+m+s;
+}
+
 const headers = ["versionCode:263","SYS:android","qd:baoshu_sogo1","User-Agent:okhttp-okgo/jeasonlzy"]
 
 //搜索
@@ -38,7 +51,7 @@ const detail = (url) => {
     summary: $.description,
     status: $.is_finish == 2 ? '连载' : '完结',
     category: $.category,
-    update: $.mtime,
+    update: timestampToTime($.mtime),
     lastChapter: $.new_title,
     catalog: $.id
   }
@@ -72,5 +85,5 @@ const chapter = (url) => {
 var bookSource = JSON.stringify({
   name: "宝书免费小说",
   url: "gfnormal05at.com",
-  version: 100
+  version: 101
 })

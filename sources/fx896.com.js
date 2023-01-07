@@ -44,10 +44,9 @@ const catalog = (url) => {
   let response = GET(url)
   let $ = HTML.parse(response)
   let array = []
-  $('.clear:nth-child(5) > div').forEach((booklet) => {
-    let $ = HTML.parse(booklet)
-    if ($("div").attr("style").match("color: #444444")) array.push({ name: $("div").text() })
-    else array.push({
+  $('.clear:nth-child(5) > div:nth-child(n+2)').forEach((chapter) => {
+    let $ = HTML.parse(chapter)
+    array.push({
       name: $("a").text(),
       url: `https://www.fx896.com${$("a").attr("href")}`
     })
@@ -65,5 +64,5 @@ const chapter = (url) => {
 var bookSource = JSON.stringify({
   name: "汇商阅读",
   url: "fx896.com",
-  version: 100
+  version: 101
 })

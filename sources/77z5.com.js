@@ -4,7 +4,7 @@
  * @returns {[{name, author, cover, detail}]}
  */
 const search = (key) => {
-  let response = POST("https://m.boshisw.com/s.php",{data:`keyword=${key}&t=1`})
+  let response = POST("https://m.77z5.com/s.php",{data:`keyword=${key}&t=1`})
   let array = []
   let $ = HTML.parse(response)
   $('div.hot_sale').forEach((child) => {
@@ -69,6 +69,6 @@ const chapter = (url) => {
 
 var bookSource = JSON.stringify({
   name: "博仕书屋",
-  url: "boshisw.com",
+  url: "77z5.com",
   version: 100
 })
