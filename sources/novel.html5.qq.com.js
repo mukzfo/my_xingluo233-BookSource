@@ -53,7 +53,7 @@ const catalog = (url) => {
   $.rows.forEach((chapter) => {
     array.push({
       name: chapter.serialName,
-      url: `a?bid=${url}&cid=${chapter.serialID}`
+      url: `a?bid=${url}&cid=${chapter.serialID}`
     })
   })
   return JSON.stringify(array)
@@ -78,5 +78,5 @@ const chapter = (url) => {
 var bookSource = JSON.stringify({
   name: "QQ浏览器免费小说",
   url: "novel.html5.qq.com",
-  version: 103
+  version: 104
 })
