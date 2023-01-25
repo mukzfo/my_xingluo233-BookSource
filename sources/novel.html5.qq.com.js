@@ -68,9 +68,10 @@ const chapter = (url) => {
         url.query("cid")
       ]
     }],
-    Scene: "chapter"
+    Scene: "chapter",
+    ReaderVersion: 2008
   })
-  let response = POST("https://novel.html5.qq.com/be-api/content/ads-read",{data,headers:["Q-GUID:0ee63838b72eb075f63e93ae0bc288cb","QIMEI36:8ff310843a87a71101958f5610001e316a11"]})
+  let response = POST("https://novel.html5.qq.com/be-api/content/ads-read",{data,headers:["Q-GUID:4bbcbac89f9b53a1fb75aa860a8188cb","QIMEI36:a2ba4d218c43293e3ce031f510001ef17111"]})
   let $ = JSON.parse(response)
   return $.data.Content[0].Content
 }
