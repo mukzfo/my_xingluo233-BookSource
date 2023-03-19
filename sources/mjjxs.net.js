@@ -18,8 +18,8 @@ function getNowFormatDate() {
  * @returns {[{name, author, cover, detail}]}
  */
 const search = (key) => {
-    let response = GET(`https://mjjxs.net/search?keyword=${key}&t=${Math.floor(new Date)}_${getNowFormatDate()}a`, {
-        headers: ["User-Agent:Mozilla/5.0 (Linux; Android 12; Mi 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Mobile Safari/537.36 EdgA/110.0.1587.61", "Referer:https://mjjxs.net/"]
+    let response = GET(`https://mjjxs.net/search/s312t20230309?keyword=${key}&t=${Math.floor(new Date)}_${getNowFormatDate()}a`, {
+        headers: ["User-Agent:Mozilla/5.0 (Linux; Android 12; Mi 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Mobile Safari/537.36 EdgA/110.0.1587.61", "Referer:https://mjjxs.net/?t=302_from_search"]
     })
     let res = response.match(/\[\{.+\}\]/)[0]
     let $ = JSON.parse(res)
