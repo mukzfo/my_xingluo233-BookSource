@@ -19,7 +19,7 @@ function getNowFormatDate() {
  */
 const search = (key) => {
     let response = GET(`https://mjjxs.net/search/s312t20230309?keyword=${key}`, {
-        headers: ["Host:mjjxs.net", "Connection:keep-alive", "Upgrade-Insecure-Requests:1", "User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36", "Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9", "dnt:1", "X-Requested-With:mark.via", "Sec-Fetch-Site:none", "Sec-Fetch-Mode:navigate", "Sec-Fetch-User:?1", "Sec-Fetch-Dest:document", "Referer:https://mjjxs.net/?t=302_from_search", "Accept-Encoding:gzip, deflate", "Accept-Language:zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7", "Cookie:t=t20230309; t=t20230309; user_key=303191502410355654; book_hitory_57999490=%7B%22chapter_i%22%3A227%7D"]
+        headers: ["Host: mjjxs.net", "Connection: keep-alive", "Upgrade-Insecure-Requests: 1", "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36", "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9", "dnt: 1", "X-Requested-With: mark.via", "Sec-Fetch-Site: none", "Sec-Fetch-Mode: navigate", "Sec-Fetch-User: ?1", "Sec-Fetch-Dest: document", "Referer: https://mjjxs.net/", "Accept-Encoding: gzip, deflate", "Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7", "Cookie: t=t20230309; t=t20230309; user_key=303191502410355654; book_hitory_57999490=%7B%22chapter_i%22%3A227%7D"]
     })
     let res = response.match(/\[\{.+\}\]/)[0]
     let $ = JSON.parse(res)
